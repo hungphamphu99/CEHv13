@@ -1,10 +1,11 @@
 # My ceh practical notes
 #IP
+```
 Kali
 Win11
-Server2022
-Server2019
-Android
+Server22
+Server19
+```
 #  Scanning Networks (always do sudo su) --> To be root
 ```
 1- Nmap scan for alive/active hosts command for 192.189.19.18- nmap -A 192.189.19.0/24 or nmap -T4 -A ip
