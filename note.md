@@ -1,5 +1,5 @@
 # My ceh practical notes
-#IP
+# IP
 ```
 Kali
 Win11
