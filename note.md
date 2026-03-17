@@ -15,7 +15,7 @@ If even this the above command is not working then use this command-  namp -f 10
 4- -A command is aggressive scan it includes - OS detection (-O), Version (-sV), Script (-sS) and traceroute (--traceroute).
 5- Identify Target system os with (Time to Live) TTL and TCP window sizes using wireshark- Check the target ip Time to live value with protocol ICMP. If it is 128 then it is windows, as ICMP value came from windows. If TTL is 64 then it is linux. Every OS has different TTL. TTL 254 is solaris.
 6- Nmap scan for host discovery or OS- nmap -O 192.168.92.10 or you can use nmap -A 192.168.92.10
-7- If host is windows then use this command - nmap --script smb-os-discovery.nse 192.168.12.22 (this script determines the OS, computer name, domain, workgroup, time over smb protocol (ports 445 or 139).
+7- nmap --script smb-os-discovery.nse <ipaddr> (If host is windows this script determines the OS, computer name, domain, workgroup, time over smb protocol (ports 445 or 139).
 8- nmap command for source port manipulation, in this port is given or we use common port-  nmap -g 80 10.10.10.10
 ```
 # Enumeration
@@ -28,8 +28,12 @@ If even this the above command is not working then use this command-  namp -f 10
 5- FTP enum using nmap-  nmap -p 21 -A 10.10.10.10 
 6- NetBios enum using enum4linux- enum4linux -u martin -p apple -n 10.10.10.10 (all info)
 				  enum4linux -u martin -p apple -P 10.10.10.10 (policy info)
-7- ldap enum-How many user - ldapsearch -x -H ldap://<ipaddr> -b "dc=CEH,dc=com" "(objectClass=user)" cn
-7.1-           ldapsearch -x -H ldap://<ipaddr> -s báe
+7- ldap enum-How many user 
+   ldapsearch -x -H ldap://<ipaddr> -b "dc=CEH,dc=com" "(objectClass=user)" cn
+   ldapsearch -x -H ldap://<ipaddr> -s base
+8- smtp-enum-How many user 
+   nmap -p25 --script=smtp-enum-users <ipaddr>
+   
 ```
 #  Quick Overview (Stegnography) --> Snow , Openstego
 ```
@@ -60,13 +64,13 @@ hydra -l user -P passlist.txt ftp://10.10.10.10
 ```
 1- Scan Using OWASP ZAP (Parrot)- Type zaproxy in the terminal and then it would open. In target tab put the url and click automated scan.
 2- Directory Bruteforcing- gobuster dir -u 10.10.10.10 -w /home/attacker/Desktop/common.txt
-3- Enumerate a Web Application using WPscan & Metasploit BFA-  wpscan --url http://10.10.10.10:8080/NEW --enumerate u  (u means username) 
+3- Enumerate a Web Application using WPscan & Metasploit BFA-  wpscan --url http://<target ip>:<target port>//NEW --enumerate u  (u means username) 
 Then type msfconsole to open metasploit. Type -  use auxilliary/scanner/http/wordpress_login_enum
  						 show options
 						 set PASS_FILE /home/attacker/Desktop/Wordlist/password.txt
-						 set RHOSTS 10.10.10.10  (target ip)
-						 set RPORT 8080          (target port)
-						 set TARGETURI http://10.10.10.10:8080/
+						 set RHOSTS <target ip>
+						 set RPORT  <target port>  (8080)
+						 set TARGETURI http://<target ip>:<target port>/
 						 set USERNAME admin
 4- Brute Force using WPscan -    wpscan --url http://10.10.10.10:8080/NEW -u root -P passwdfile.txt (Use this only after enumerating the user like in step 3)
 			         wpscan --url http://10.10.10.10:8080/NEW --usernames userlist.txt, --passwords passwdlist.txt 
@@ -106,15 +110,16 @@ crc32 												  (Now type crc32 path to apk to Determine the complete CRC va
 ```
 # Wireshark
 ```
-tcp.flags.syn == 1 and tcp.flags.ack == 0    (How many machines) or Go to statistics IPv4 addresses--> Source and Destination ---> Then you can apply the filter given
-tcp.flags.syn == 1                           (Which machine for dos)
-http.request.method == POST                  (for passwords) or click tools ---> credentials
-tcp.port = 135 || tcp.udp = 111              (port rpc)
+tcp.flags.syn == 1 and tcp.flags.ack == 0    		  (How many machines) or Go to statistics IPv4 addresses--> Source and Destination ---> Then 													   you can apply the filter given
+tcp.flags.syn == 1                           		  (Which machine for dos)
+http.request.method == POST                  		  (for passwords) or click tools ---> credentials
+tcp.port = 135 || tcp.udp = 111              		  (port rpc)
 Also
 ```
 # Find FQDN
 ```
 nmap -p389 –sV -iL <target_list>  or nmap -p389 –sV <target_IP> (Find the FQDN in a subnet/network)
+nmap --script smb-os-discovery.nse <ipaddr>
 
 ```
 # Cracking Wi-Fi networks
@@ -125,13 +130,14 @@ aircrack-ng -a2 -b [Target BSSID] -w [password_Wordlist.txt] [WP2 PCAP file] (Fo
 
 ```
 #Cracking Hash Password 
+```
 Kerberos
 impacket-GetNUsers  <Domain Controll>/ -dc-ip <ipaddr> -usersfile users.txt -no-pass nano file.hash
 john file.hash -wordlist=rockyou.txt 
 
 HTLM
 john --format=NT hashes.txt
-
+```
 
 #  Some extra work 
 ```
