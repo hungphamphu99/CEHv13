@@ -101,8 +101,8 @@ adb shell                                             (Access mobile device on p
 adb push <pc location> <android location>
 adb pull <android location> <pc location>
 pwd --> ls --> cd sdcard --> ls --> cat secret.txt    (If you can't find it there then go to Downloads folder using: cd downloads)
-python phonesploit.py                                 (Determine the complete CRC value)
-crc32 
+python phonesploit.py                                 
+crc32 												  (Now type crc32 path to apk to Determine the complete CRC value)
 ```
 # Wireshark
 ```
