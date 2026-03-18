@@ -237,8 +237,15 @@ set LHOST <ipattacker>
 set LPORT 4444
 run
 
+```
+# SMB
+```
+smbclient -L //<ip> -N 						(Anonymous)
+smbclient -L //<ip> -U <username>
+smbclient //<ip>/<share> -U <username>
 
 ```
+
 #  Some extra work 
 ```
 nmap -p 3389 -iL ip.txt | grep open 		(Check RDP enabled after getting ip- ip.txt contains all the alive hosts from target subnet)
