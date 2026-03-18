@@ -33,7 +33,7 @@ If even this the above command is not working then use this command-  namp -f 10
    snmp-check 10.10.10.10 ( It will show user accounts, processes etc) --> for parrot
 
 4- DNS recon/enum-  dnsrecon -d www.google.com -z
-5- FTP enum using nmap-  nmap -p 21 -A 10.10.10.10 
+5- FTP enum using nmap-  nmap -p 21 -A <ipaddr> 
 6- NetBios enum using enum4linux- enum4linux -u martin -p apple -n 10.10.10.10 (all info)
 				  enum4linux -u martin -p apple -P 10.10.10.10 (policy info)
 7- ldap enum-How many user 
