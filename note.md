@@ -49,8 +49,13 @@ If even this the above command is not working then use this command-  namp -f 10
 SNOW -C -m "<text>" -p "<pwd>" readme.txt readme2.txt   (1- Hide Data Using Whitespace Stegnography- pwd is password and your secret is stored in 														 readme2.txt along with the content of readme.txt)
 SNOW -C -p "<pwd>" readme2.txt 							(To Display Hidden Data- then it will show the content of readme2.txt content)
 
+steghide extract -sf stealth.jpeg 						(Extract hidden file)
+
 Image Stegnography using Openstego
-steghide extract -sf stealth.jpeg 						(Extract hidden file) 
+<img width="700" height="400" alt="68747470733a2f2f7777772e6f70656e737465676f2e636f6d2f696d6167652f73637265656e73686f742f30312e706e67" src="https://github.com/user-attachments/assets/fca798fa-be91-4eaa-94e5-55e3c67dd0bc" />
+<img width="700" height="400" alt="68747470733a2f2f7777772e6f70656e737465676f2e636f6d2f696d6167652f73637265656e73686f742f30322e706e67" src="https://github.com/user-attachments/assets/08f5331b-44bb-4877-9523-1936b5eaf5e5" />
+
+ 
 ```
 #  Sniffing
 ```
