@@ -58,9 +58,10 @@ Image Stegnography using Openstego
 
  
 #  Sniffing
-```
-1- Password Sniffing using Wireshark- In pcap file apply filter: http.request.method==POST (you will get all the post request) Now to capture password click on edit in menu bar, then near Find packet section, on the "display filter" select "string", also select "Packet details" from the drop down of "Packet list", also change "narrow & wide" to "Narrow UTF-8 & ASCII", and then type "pwd" in the find section.
-```
+<img width="498" height="39" alt="Screenshot 2026-03-19 at 06 09 05" src="https://github.com/user-attachments/assets/14b5bce3-0408-4aa5-8517-a7038a9542fa" />
+<img width="517" height="98" alt="Screenshot 2026-03-19 at 06 15 08" src="https://github.com/user-attachments/assets/0c8174d1-504b-4977-8c20-828fdd06c82e" />
+
+
 #  Hacking Web Servers
 ```
 1- Footprinting web server Using Netcat and Telnet- nc -vv www.movies.com 80
