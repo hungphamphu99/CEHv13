@@ -169,7 +169,7 @@ HTLM
 pwDump7.exe > hashes.txt
 john --format=NT hashes.txt
 ```
-#Privilege Escalation
+# Privilege Escalation
 ```
 
 ```
