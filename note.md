@@ -244,4 +244,5 @@ run
 nmap -p 3389 -iL ip.txt | grep open 		(Check RDP enabled after getting ip- ip.txt contains all the alive hosts from target subnet)
 nmap -p 3306 -iL ip.txt | grep open			(Check MySQL service running- ip.txt contains all the alive hosts from target subnet)
 python3 -m http.server 8000
+Remmina Remote Desktop Client (On kali)
 ```
