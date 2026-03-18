@@ -8,8 +8,8 @@ Server19
 ```
 #  Scanning Networks (always do sudo su) --> To be root
 ```
-1- Nmap scan for alive/active hosts command for 192.189.19.18-
-   nmap -A 192.189.19.0/24 or nmap -T4 -A ip
+1- Nmap scan for alive/active hosts 
+   nmap -A <dai mang> or nmap -T4 -A ip
    nmap -sn -PR <dai mang> 
    netdiscover -r <dai mang>
 2- Zenmap/nmap command for TCP scan- First put the target ip in the Target: and then in the Command: put this command- nmap -sT -v 10.10.10.16
