@@ -44,12 +44,14 @@ If even this the above command is not working then use this command-  namp -f 10
    nmap -p25 --script=smtp-enum-users <ipaddr>
    
 ```
-#  Quick Overview (Stegnography) --> Snow , Openstego
+# Stegnography
 ```
 SNOW -C -m "<text>" -p "<pwd>" readme.txt readme2.txt   (1- Hide Data Using Whitespace Stegnography- pwd is password and your secret is stored in 														 readme2.txt along with the content of readme.txt)
 SNOW -C -p "<pwd>" readme2.txt 							(To Display Hidden Data- then it will show the content of readme2.txt content)
 
 steghide extract -sf stealth.jpeg 						(Extract hidden file)
+
+VeraCrypt 												(chọn encrypted folder , chọn mount , nhập pwd để mở )
 
 Image Stegnography using Openstego
 ```
