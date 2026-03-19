@@ -295,6 +295,7 @@ python3 /root/impacket/examples/mssqlclient.py CEH.com/SQL_srv:batman@10.10.1.30
 nRAT
 Detect It Easy 								(Tính entropy)
 
+nmap -p- -sV <ipaddr>
 njRAT
 MoSucker
 ProRat
