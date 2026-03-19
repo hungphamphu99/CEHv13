@@ -81,8 +81,9 @@ hydra -l user -P passlist.txt ftp://10.10.10.10
 #  Hacking Web Application
 ```
 1- Scan Using OWASP ZAP .In target tab put the url and click automated scan.
-2- Directory Bruteforcing- gobuster dir -u 10.10.10.10 -w /home/attacker/Desktop/common.txt
-3- Enumerate a Web Application using WPscan & Metasploit BFA-  wpscan --url http://<target ip>:<target port>//NEW --enumerate u  (u means username) 
+2- Directory Bruteforcing- gobuster dir -u <ipaddr> -w /home/attacker/Desktop/common.txt
+3- Enumerate a Web Application using WPscan & Metasploit BFA-
+wpscan --url http://<ipaddr>:<port>//NEW --enumerate u  									(u means username) 
 Then type msfconsole to open metasploit. Type -  use auxilliary/scanner/http/wordpress_login_enum
  						 show options
 						 set PASS_FILE /home/attacker/Desktop/Wordlist/password.txt
