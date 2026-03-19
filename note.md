@@ -112,8 +112,16 @@ weevely http://<ipaddr>/dvwa/hackable/uploads/weevely.php <pwd> 		(sau đó có 
 
 ```
 medium
+tương tự nhưng mở OWASP ZAP nên
+resend lại upload nhớ sửa Content-Type: image/jpeg (hoặc file j đc phép)
+
+high
+
+
 
 ```
+
+
 
 #  SQL 
 ```
@@ -301,6 +309,7 @@ smbclient //<ip>/<share> -U <username>
 #  Some extra work 
 ```
 https://www.ipvoid.com/ip-geolocation/		(vị trí địa lý)
+https://www.revshells.com
 https://hashes.com/en/decrypt/hash
 nmap -p 3389 -iL ip.txt | grep open 		(Check RDP enabled after getting ip- ip.txt contains all the alive hosts from target subnet)
 nmap -p 3306 -iL ip.txt | grep open			(Check MySQL service running- ip.txt contains all the alive hosts from target subnet)
