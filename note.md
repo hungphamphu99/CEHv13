@@ -346,3 +346,5 @@ ProRat
 Theef
 HTTP RAT
 ```
+<img width="627" height="266" alt="Screenshot 2026-03-18 at 06 10 36" src="https://github.com/user-attachments/assets/1705cda8-bfcc-412c-997c-6ba5b8d72c1d" />
+
