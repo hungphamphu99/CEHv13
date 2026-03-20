@@ -323,6 +323,7 @@ smbclient //<ip>/<share> -U <username>
 
 #  Some extra work 
 ```
+https://crackstation.net/
 https://www.ipvoid.com/ip-geolocation/		(vị trí địa lý)
 https://www.revshells.com
 https://hashes.com/en/decrypt/hash
