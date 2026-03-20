@@ -197,6 +197,9 @@ aircrack-ng [pcap file] (For cracking WEP network)
 aircrack-ng -a2 -b [Target BSSID] -w [password_Wordlist.txt] [WP2 PCAP file] (For cracking WPA2 or other networks through the captured .pcap file)
 
 ```
+<img width="637" height="392" alt="Screenshot 2026-03-20 at 10 20 51" src="https://github.com/user-attachments/assets/7c80e7f3-c928-45ba-bbb8-ad8089bdbd98" />
+
+
 # Cracking Hash Password 
 ```
 Kerberos(88)
